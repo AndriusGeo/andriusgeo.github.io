@@ -12,6 +12,15 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+
+    <!-- MapLibre stilius -->
+    <link
+      href="https://unpkg.com/maplibre-gl@^4.7.1/dist/maplibre-gl.css"
+      rel="stylesheet"
+    />
+
+    <!-- Žemėlapių naršyklės stilius -->
+    <link href="css/map.css" rel="stylesheet" />
   </head>
   <body>
     <div class="container-fluid vh-100 p-0">
@@ -152,7 +161,45 @@
             </div>
           </div>
         </div>
-        <div class="col-9 bg-light">Žemėlapis</div>
+        <div id="map" class="col-9 bg-light">
+          <div
+            id="map-bm-switcher"
+            class="btn-group p-2"
+            role="group"
+            aria-label="Basic radio toggle button group"
+          >
+            <input
+              type="radio"
+              class="btn-check"
+              name="btnradio"
+              id="btnradio1"
+              autocomplete="off"
+              checked
+              onclick="switchBgLayers('Gatvės')"
+            />
+            <label class="btn btn-primary" for="btnradio1">Gatvės</label>
+
+            <input
+              type="radio"
+              class="btn-check"
+              name="btnradio"
+              id="btnradio2"
+              autocomplete="off"
+              onclick="switchBgLayers('Pilkas')"
+            />
+            <label class="btn btn-primary" for="btnradio2">Pilkas</label>
+
+            <input
+              type="radio"
+              class="btn-check"
+              name="btnradio"
+              id="btnradio3"
+              autocomplete="off"
+              onclick="switchBgLayers('Gamtinis')"
+            />
+            <label class="btn btn-primary" for="btnradio3">Gamtinis</label>
+          </div>
+        </div>
       </div>
     </div>
     <!-- Bootstrap bibliotekos JS šaltinis -->
@@ -161,5 +208,11 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+
+    <!-- MapLibre JS šaltinis -->
+    <script src="https://unpkg.com/maplibre-gl@^4.7.1/dist/maplibre-gl.js"></script>
+
+    <!-- Žemėlapių naršyklės JS šaltinis -->
+    <script src="js/map.js"></script>
   </body>
 </html>
