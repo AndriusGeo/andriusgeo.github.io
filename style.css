@@ -1,35 +1,108 @@
-.app-header {
-  background-color: #282c34;
-  padding: 20px;
-  color: white;
-  text-align: center;
-}
-
-.map-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 1em;
-}
-
-.map-img {
-  height: 200px;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  min-width: 300px;
-}
-
-.map-img:hover {
-  background-color: gray;
-  cursor: pointer;
-} 
-
-.map-img h3 {
-  text-align: center;
-  color: white;
-  background-color: gray;
-  font-size: 1.5em;
+html, body {
+  padding: 0;
   margin: 0;
 }
+
+html, body, div {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+.content-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+#header {
+  padding: 1em 0;
+}
+
+#header .content-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+#intro {
+  background-color: #edecea;
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+}
+
+#intro .content-container {
+  background-image: url("img/bg_intro.png");
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+
+#intro h1 {
+  font-size: 50px;
+  font-weight: 300;
+  color: #323232;
+  max-width: 60%;
+}
+
+#intro p {
+  color: #323232;
+  font-size: 24px;
+  font-weight: 300;
+  max-width: 60%;
+}
+
+#services {
+  background-color: #323232;
+  color: white;
+  padding: 3em 0;
+}
+
+#services .content-container{
+  display: flex;
+  gap: 3em; 
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.service-description {
+  flex-basis: 450px;
+  flex-grow: 1;
+  font-weight: 300;
+  padding: 1em 0;
+}
+
+.service-description h2 {
+  font-size: 1.8em;
+  margin-bottom: 0.8em;
+  font-weight: 400;
+}
+
+.service-description p {
+  line-height: 1.6;
+  opacity: 0.9; 
+}
+
+.service-description a {
+  color: #ff5a5f;
+  text-decoration: none;
+}
+
+.service-description a:hover {
+  text-decoration: underline;
+}
+
+.page-header-title {
+  font-size: 0.9em;
+  font-weight: 300;
+}
+
+#contacts {
+  min-height: 200px;
+  background-image: url("img/bg-cubes.webp");
+  color: #323232;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
