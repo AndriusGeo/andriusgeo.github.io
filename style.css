@@ -52,44 +52,59 @@ html, body, div {
   max-width: 60%;
 }
 
-#services {
+#services, #maps {
   background-color: #323232;
   color: white;
   padding: 3em 0;
 }
 
-#services .content-container{
+#maps {
+  background-image: url("img/bg-black-v2.webp");
+}
+
+#services .content-container, #maps .content-container{
   display: flex;
   gap: 3em; 
   flex-wrap: wrap;
   align-items: center;
 }
 
-.service-description {
+.service-description, .maps-description {
   flex-basis: 450px;
   flex-grow: 1;
   font-weight: 300;
   padding: 1em 0;
 }
 
-.service-description h2 {
+.service-description h2, .maps-description h2{
   font-size: 1.8em;
   margin-bottom: 0.8em;
   font-weight: 400;
 }
 
-.service-description p {
+.service-description p, .maps-description p{
   line-height: 1.6;
   opacity: 0.9; 
 }
 
-.service-description a {
+.service-description a, .maps-description a{
   color: #ff5a5f;
   text-decoration: none;
 }
 
-.service-description a:hover {
+.service-description a:hover, .maps-description a:hover{
   text-decoration: underline;
+}
+
+.map-image {
+  max-width: 60%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.map-image:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
 }
 
 .page-header-title {
@@ -106,3 +121,25 @@ html, body, div {
   text-align: center;
 }
 
+/*
+Navigacijos konfigūracija
+*/
+nav a {
+  color: #323232;
+  text-decoration: none;
+  font-size: 0.9em;
+  font-weight: 300;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+
+/*
+  Kontaktų formos stilius
+*/
+
+.form-container {
+  height: 1300px;
+}
