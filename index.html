@@ -1,64 +1,167 @@
 <!doctype html>
-<html lang="en">
+<html lang="lt">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Mano svetainė</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Molėtų rajono žemėlapių portalas</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+    <!-- NAV -->
+    <nav class="nav">
+      <div class="nav-logo">
+        <span class="nav-logo-icon">&#9678;</span>
+        Molėtų GIS
+      </div>
+      <ul class="nav-links">
+        <li><a href="#" class="active">Pradžia</a></li>
+        <li><a href="#maps">Žemėlapiai</a></li>
+        <li><a href="#footer">Kontaktai</a></li>
+      </ul>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1>Molėtų rajono<br />žemėlapių portalas</h1>
+        <p>
+          Interaktyvūs GIS žemėlapiai, erdviniai duomenys ir<br />geoinformacinės
+          paslaugos Molėtų rajonui.
+        </p>
+        <div class="hero-buttons">
+          <a href="#maps" class="btn btn-primary">Naršyti žemėlapius</a>
+          <a href="#footer" class="btn btn-outline">Sužinoti daugiau</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- DESCRIPTION -->
+    <section class="description">
+      <h2>Naršykite Molėtų krašto duomenis</h2>
+      <p>
+        Šiame portale rasite interaktyvius Molėtų rajono GIS žemėlapius,
+        parengtus naudojant atvirus erdvinius duomenis. Žemėlapiai vizualizuoja
+        gyvenamųjų pastatų išdėstymą, kvartalų gyventojų tankumą bei integruotą
+        ortofotografinį vaizdą iš NŽT geoportalo WMS paslaugos.
+      </p>
+      <p>
+        Tai demonstracinė svetainė, visas joje pateikiamas turinys yra skirtas
+        mokymo tikslams
+      </p>
+    </section>
+
+    <!-- MAPS SECTIONS -->
+    <main id="maps" class="maps">
+      <section class="map-section">
+        <div class="map-text">
+          <h2>Gyvenamieji pastatai</h2>
+          <p>
+            Molėtų miesto gyvenamųjų pastatų žemėlapis su kvartalų padalijimo
+            vizualizacija. Duomenys atvaizduoja pastatų tankumą, paskirtį ir
+            išdėstymą miesto teritorijoje.
+          </p>
+          <a href="pages/map_1.html" class="btn btn-map"
+            >Atidaryti žemėlapį &rarr;</a
+          >
+        </div>
+        <div class="map-image">
+          <img src="img/map_1.png" alt="Gyvenamųjų pastatų žemėlapis" />
+        </div>
+      </section>
+
+      <section class="map-section map-section--reverse">
+        <div class="map-text">
+          <h2>Kvartalų gyventojų tankumas</h2>
+          <p>
+            Miesto kvartalų žemėlapis rodantis gyventojų pasiskirstymą. Spalvinė
+            gradacija leidžia greitai identifikuoti tankiai ir retai
+            apgyvendintas teritorijas.
+          </p>
+          <a href="pages/map_2.html" class="btn btn-map"
+            >Atidaryti žemėlapį &rarr;</a
+          >
+        </div>
+        <div class="map-image">
+          <img src="img/map_1.png" alt="Kvartalų tankumo žemėlapis" />
+        </div>
+      </section>
+
+      <section class="map-section">
+        <div class="map-text">
+          <h2>WMS ortofoto žemėlapis</h2>
+          <p>
+            Integruotas WMS sluoksnis su NŽT geoportalo ortofotografiniu vaizdu.
+            Žemėlapis leidžia peržiūrėti aukštos rezoliucijos aerofotografines
+            nuotraukas realiame laike.
+          </p>
+          <a href="pages/map_3.html" class="btn btn-map"
+            >Atidaryti žemėlapį &rarr;</a
+          >
+        </div>
+        <div class="map-image">
+          <img src="img/map_1.png" alt="WMS ortofoto žemėlapis" />
+        </div>
+      </section>
+    </main>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact">
+      <div class="contact-card">
+        <span class="contact-label">Prisidėk prie mūsų</span>
+        <h2>Kurkime Molėtų regiono duomenų banką kartu</h2>
+        <p>Įdomu, o gal reikia pagalbos? Parašykite mums!</p>
+        <a href="mailto:andrius.balciunas@chgf.vu.lt" class="btn btn-primary"
+          >Susisiekite su mumis</a
         >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="footer" class="footer">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h3>Molėtų GIS portalas</h3>
+          <p>
+            Vilniaus universiteto GIS studijų projektas. Interaktyvūs žemėlapiai
+            skirti Molėtų rajono erdvinių duomenų vizualizavimui ir analizei.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h3>Žemėlapiai</h3>
+          <ul>
+            <li><a href="1_praktinis/map_1.html">Gyvenamieji pastatai</a></li>
+            <li><a href="1_praktinis/map_2.html">Kvartalų tankumas</a></li>
+            <li><a href="1_praktinis/map_3.html">WMS sluoksnis</a></li>
+            <li><a href="2_praktinis/map.html">QGIS Cloud žemėlapis</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3>Nuorodos</h3>
+          <ul>
+            <li>
+              <a href="https://www.geoportal.lt" target="_blank"
+                >NŽT Geoportalas</a
+              >
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Features</a>
+            <li>
+              <a href="https://www.moletai.lt" target="_blank"
+                >Molėtų rajono savivaldybė</a
+              >
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Pricing</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            <li>
+              <a href="https://www.vu.lt" target="_blank"
+                >Vilniaus universitetas</a
+              >
             </li>
           </ul>
         </div>
       </div>
-    </nav>
-    <div class="card" style="width: 18rem">
-      <img src="img/img_1.webp" class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the
-          bulk of the card’s content.
-        </p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Molėtų GIS portalas &mdash; Vilniaus universitetas</p>
       </div>
-    </div>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-    ></script>
+    </footer>
   </body>
 </html>
