@@ -152,6 +152,21 @@ img {
   display: block;
 }
 
+.map-embed-mx {
+  max-width: 100%;
+  margin: 2.5rem auto;
+  padding: 0 3rem;
+}
+
+.map-embed-mx iframe {
+  width: 100%;
+  height: 800px;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  display: block;
+}
+
 /* ===== HERO ===== */
 .hero {
   position: relative;
