@@ -289,6 +289,11 @@ img {
   gap: 5rem;
 }
 
+/* Add specific style for Leaflet Map */
+#lmap {
+  height: 600px;  
+}
+
 .map-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -446,6 +451,142 @@ img {
   font-size: 0.85rem;
   color: #6b7280;
   text-align: center;
+}
+
+/* ===== TUTORIAL ===== */
+.tutorial {
+  background: #f8f9fa;
+  border-top: 1px solid #e5e7eb;
+  padding: 4rem 3rem;
+}
+
+.tutorial-inner {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.tutorial h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.tutorial-intro {
+  font-size: 1rem;
+  color: #4b5563;
+  line-height: 1.75;
+  margin-bottom: 3rem;
+}
+
+.tutorial-intro a {
+  color: #3b82f6;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.tutorial-step {
+  border-left: 3px solid #3b82f6;
+  padding-left: 1.75rem;
+  margin-bottom: 2.75rem;
+  position: relative;
+}
+
+.tutorial-step-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.tutorial-step-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: #3b82f6;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.tutorial-step h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.tutorial-step p {
+  font-size: 0.95rem;
+  color: #4b5563;
+  line-height: 1.7;
+  margin-bottom: 0.75rem;
+}
+
+.tutorial-step p:last-child {
+  margin-bottom: 0;
+}
+
+.tutorial-note {
+  font-size: 0.875rem !important;
+  color: #6b7280 !important;
+  background: #f3f4f6;
+  border-radius: 6px;
+  padding: 0.6rem 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.tutorial-step code,
+.tutorial-result code {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: 0.875rem;
+}
+
+.tutorial-step p code {
+  background: #e5e7eb;
+  color: #1a1a2e;
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+.tutorial-step pre,
+.tutorial-result pre {
+  background: #1e2433;
+  color: #e2e8f0;
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  overflow-x: auto;
+  margin: 0.75rem 0;
+  font-size: 0.875rem;
+  line-height: 1.65;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+}
+
+.tutorial-result {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-top: 1rem;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+}
+
+.tutorial-result h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.4rem;
+}
+
+.tutorial-result p {
+  font-size: 0.95rem;
+  color: #4b5563;
+  margin-bottom: 0.75rem;
 }
 
 /* ===== RESPONSIVE ===== */

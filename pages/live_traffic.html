@@ -3,8 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WMS ortofoto žemėlapis – Molėtų GIS</title>
+    <title>Gyvenamieji pastatai – Molėtų GIS</title>
     <link rel="stylesheet" href="../style.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
   </head>
   <body>
     <!-- NAV -->
@@ -26,21 +40,20 @@
         <a href="../index.html#maps" class="page-back"
           >&larr; Visi žemėlapiai</a
         >
-        <h1>Pastatai pagal plotą</h1>
+        <h1>Realaus laiko viešojo transporto žemėlapis</h1>
         <p>
-          Analitinis žemėlapis su pateikta informacija apie pastatus, jų plotą
-          ir erdvinį pasiskirstymą.
+          Tai Leaflet žemėlapio demonstracija, kurioje pateikiami Vilniaus
+          miesto viešojo transporto judėjimo realaus laiko duomenys. Duomenys
+          atsinaujina kas <strong>5 s</strong>. Identifikavus objektą žemėlapyje
+          matysi pagrindę transporto priemonės informaciją.
         </p>
       </div>
     </header>
 
     <!-- MAP -->
     <div class="map-embed">
-      <iframe
-        src="../1_praktinis/map_3.html"
-        title="WMS ortofoto žemėlapis – interaktyvus žemėlapis"
-        allowfullscreen
-      ></iframe>
+      <!-- Leaflet žemėlapis -->
+      <div id="lmap"></div>
     </div>
 
     <!-- FOOTER -->
@@ -85,5 +98,46 @@
         <p>&copy; 2025 Molėtų GIS portalas &mdash; Vilniaus universitetas</p>
       </div>
     </footer>
+
+    <script>
+      const map = L.map("lmap").setView([54.68, 25.27], 12);
+
+      L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: "© OpenStreetMap contributors",
+      }).addTo(map);
+
+      let trafficLayer;
+
+      function loadTraffic() {
+        fetch("https://opengis.lt/projects/live_traffic/api.php")
+          .then((res) => res.json())
+          .then((data) => {
+            if (trafficLayer) map.removeLayer(trafficLayer);
+            trafficLayer = L.geoJSON(data, {
+              pointToLayer: (feature, latlng) =>
+                L.circleMarker(latlng, {
+                  radius: 6,
+                  fillColor: feature.properties.color || "#3388ff",
+                  color: "#fff",
+                  weight: 1,
+                  fillOpacity: 0.9,
+                }),
+
+              onEachFeature: (feature, layer) => {
+                const p = feature.properties;
+                layer.bindPopup(`
+              <b>${p.Transportas} ${p.Marsrutas}</b><br>
+              Direction: ${p.KryptiesPavadinimas}<br>
+              Speed: ${p.Greitis} km/h<br>
+              Vehicle: ${p.MasinosNumeris}
+            `);
+              },
+            }).addTo(map);
+          });
+      }
+
+      loadTraffic();
+      setInterval(loadTraffic, 5000);
+    </script>
   </body>
 </html>
